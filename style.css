@@ -1,0 +1,388 @@
+/* Базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background-color: #fcf9f9;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #5a1a1a;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Кнопки */
+.btn-main, .btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+.btn-main { background-color: #5a1a1a; color: #fff; }
+.btn-main:hover { background-color: #8a2a2a; }
+
+.btn-primary { background-color: #b57b7b; color: #fff; border-color: #b57b7b; }
+.btn-primary:hover { background-color: #9a6363; border-color: #9a6363; }
+
+.btn-secondary { background-color: transparent; color: #5a1a1a; border-color: #5a1a1a; }
+.btn-secondary:hover { background-color: #5a1a1a; color: #fff; }
+
+/* Шапка */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Стили для логотипа в шапке */
+header .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+header .logo img {
+    height: 70px; /* Высота логотипа. Если нужно больше или меньше — измените это число */
+    width: auto;  /* Ширина подстроится автоматически, чтобы сохранить пропорции */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* Легкий эффект при наведении (по желанию) */
+header .logo img:hover {
+    transform: scale(1.05);
+}
+
+nav a {
+    margin: 0 10px;
+    font-weight: 400;
+    transition: color 0.3s;
+    font-size: 15px;
+}
+
+nav a:hover { color: #b57b7b; }
+
+/* Главный экран */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 10%;
+    background-color: #fff;
+}
+
+.hero-text { max-width: 50%; }
+.hero-text h1 { font-size: 46px; line-height: 1.2; margin-bottom: 20px; }
+.hero-text p { font-size: 18px; margin-bottom: 30px; color: #666; }
+.hero-buttons { display: flex; gap: 15px; }
+.hero-image img {
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(90, 26, 26, 0.15);
+}
+
+/* Секции общие */
+section { padding: 80px 10%; }
+section h2 { font-size: 36px; text-align: center; margin-bottom: 40px; }
+
+/* БЛОК 2: Преимущества */
+.features-section { background-color: #f9ebeb; }
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+.feature-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.feature-icon { font-size: 40px; margin-bottom: 15px; }
+.feature-card h3 { font-size: 20px; margin-bottom: 10px; }
+.feature-card p { font-size: 14px; color: #666; }
+
+/* БЛОК 1: Обо мне */
+.about-section { background-color: #fff; }
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.about-image { flex: 1; }
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.about-text { flex: 1.5; }
+.about-text h2 { text-align: left; margin-bottom: 20px; }
+.about-text p { margin-bottom: 15px; font-size: 16px; color: #444; }
+
+/* Блок Акции */
+.promo-section { background-color: #f9ebeb; text-align: center; }
+.promo-container {
+    display: flex;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+.promo-img { width: 50%; object-fit: cover; }
+.promo-text { padding: 40px; width: 50%; display: flex; flex-direction: column; justify-content: center; }
+.promo-text h3 { font-size: 28px; margin-bottom: 10px; }
+.promo-text p { margin-bottom: 15px; }
+.promo-text ul { list-style: none; margin-bottom: 20px; }
+.promo-text ul li::before { content: "✓ "; color: #b57b7b; font-weight: bold; }
+.promo-price { margin-bottom: 15px; }
+.old-price { text-decoration: line-through; color: #999; font-size: 20px; margin-right: 10px; }
+.new-price { font-size: 32px; font-weight: 700; color: #5a1a1a; }
+.promo-valid { font-size: 14px; color: #888; margin-bottom: 20px; }
+
+/* Услуги */
+.services-section { background-color: #fff; }
+.section-subtitle { text-align: center; color: #666; margin-bottom: 50px; margin-top: -20px; }
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+.service-category {
+    background: #fafafa;
+    padding: 30px;
+    border-radius: 15px;
+    border-top: 4px solid #5a1a1a;
+}
+.service-category h3 { font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #f0e0e0; padding-bottom: 10px; }
+.price-list { list-style: none; }
+.price-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dotted #ddd;
+    font-size: 15px;
+}
+.price-list li:last-child { border-bottom: none; }
+.price-list li span:last-child { font-weight: 600; color: #5a1a1a; white-space: nowrap; margin-left: 10px; }
+.full-width { grid-column: 1 / -1; }
+.piercing-content { display: flex; gap: 30px; align-items: center; }
+.piercing-content .price-list { flex: 1; column-count: 2; column-gap: 40px; }
+.piercing-img { width: 300px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+/* БЛОК 4: Как проходит процедура */
+.process-section { background-color: #f9ebeb; text-align: center; }
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.step {
+    flex: 1;
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    position: relative;
+}
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #b57b7b;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 auto 15px;
+}
+.step h3 { font-size: 18px; margin-bottom: 10px; }
+.step p { font-size: 14px; color: #666; }
+
+/* БЛОК 5: Галерея */
+.gallery-section { background-color: #fff; }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.gallery-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+.gallery-img:hover { transform: scale(1.03); }
+
+/* БЛОК 3: Отзывы */
+.reviews-section { background-color: #f9ebeb; text-align: center; }
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+.review-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.review-text { font-style: italic; margin-bottom: 15px; color: #444; }
+.review-author { font-weight: 600; color: #5a1a1a; }
+.reviews-btn-wrapper { margin-top: 30px; }
+
+/* БЛОК 8: FAQ */
+.faq-section { background-color: #fff; max-width: 800px; margin: 0 auto; }
+.faq-container { margin-top: 30px; }
+.faq-item { margin-bottom: 15px; border-bottom: 1px solid #eee; }
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #5a1a1a;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+}
+.faq-question span { font-size: 24px; transition: transform 0.3s; }
+.faq-item.active .faq-question span { transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+.faq-answer p { padding-bottom: 15px; color: #666; }
+
+/* БЛОК 6: Контакты + Карта */
+footer { background-color: #5a1a1a; color: #fff; padding: 60px 10% 20px; }
+.footer-content { max-width: 900px; margin: 0 auto; }
+.footer-content h2 { color: #fff; text-align: center; margin-bottom: 30px; }
+.contact-info { text-align: center; margin-bottom: 30px; }
+.contact-info p { font-size: 16px; margin-bottom: 10px; }
+.contact-info a { color: #f0c0c0; text-decoration: underline; }
+.contact-info a:hover { color: #fff; }
+.map-container { border-radius: 15px; overflow: hidden; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+.footer-buttons { text-align: center; }
+footer .btn-main { background-color: #fff; color: #5a1a1a; }
+footer .btn-main:hover { background-color: #eee; }
+.copyright { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 14px; color: #ccc; }
+
+/* БЛОК 9: Кнопка Наверх */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 100px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #5a1a1a;
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 99;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.scroll-to-top.show { opacity: 1; visibility: visible; }
+.scroll-to-top:hover { background-color: #b57b7b; }
+
+/* БЛОК 7: Плавающая кнопка WhatsApp */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 100;
+    transition: transform 0.3s;
+}
+.floating-whatsapp:hover { transform: scale(1.1); }
+
+/* Адаптивность */
+@media (max-width: 900px) {
+    .hero, .promo-container, .piercing-content, .about-container { flex-direction: column; }
+    .hero-text, .hero-image img, .promo-img, .promo-text, .piercing-img, .about-image { width: 100%; max-width: 100%; }
+    .hero-image { margin-top: 40px; }
+    .promo-text { padding: 20px; }
+    .piercing-content .price-list { column-count: 1; }
+    .piercing-img { margin-top: 20px; }
+    .hero-text h2, .about-text h2 { text-align: center; }
+    .about-text { text-align: center; }
+    .process-steps { flex-direction: column; }
+    .hero-buttons { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+    header { flex-direction: column; padding: 15px; }
+    nav { margin: 15px 0; text-align: center; }
+    nav a { display: inline-block; margin: 5px 8px; }
+    .hero { padding: 40px 5%; text-align: center; }
+    .hero-text h1 { font-size: 32px; }
+    .hero-buttons { flex-direction: column; gap: 10px; }
+    section { padding: 50px 5%; }
+    section h2 { font-size: 28px; }
+    .scroll-to-top { right: 90px; bottom: 25px; width: 45px; height: 45px; }
+    .floating-whatsapp { bottom: 25px; right: 25px; width: 50px; height: 50px; }
+}
+.price-note {
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: #5a1a1a;
+    background: linear-gradient(135deg, #fdf6f0 0%, #f9ebeb 100%);
+    border-left: 3px solid #b57b7b;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(90, 26, 26, 0.06);
+    line-height: 1.5;
+}
